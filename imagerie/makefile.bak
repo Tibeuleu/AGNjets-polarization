@@ -1,0 +1,22 @@
+CC=g++
+CFLAGS=-c -Wall --pedantic
+LDFLAGS=-Wall --pedantic
+SOURCES=synchrotron.cpp functions.cpp emission_cone.cpp
+OBJECTS=synchrotron.o functions.o emission_cone.o
+EXECUTABLE=projet
+
+all: $(EXECUTABLE)
+
+$(EXECUTABLE): $(OBJECTS)
+	$(CC) $(LDFLAGS) $^ -o $@ ; ./$(EXECUTABLE) ; make clean ;
+
+clean:
+	$(RM) *.o $(EXECUTABLE)
+
+depend:
+	makedepend -Y $(SOURCES)
+# DO NOT DELETE
+
+synchrotron.o: functions.h
+functions.o: functions.h
+emission_cone.o: functions.h synchrotron.h

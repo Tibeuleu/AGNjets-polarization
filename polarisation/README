@@ -1,0 +1,2 @@
+Pour l'affichage python nécessite la librairie "matplotlib", pour l'installer : "sudo apt install pip-python ; pip install matplotlib" (pip se chargera des dépendances)
+Pour compiler et exécuter le programme taper la commande  "make"
